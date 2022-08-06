@@ -141,6 +141,10 @@ impl EphemeralPrivateKey {
         self.algorithm
     }
 
+    pub fn as_bytes(&self) -> &[u8] {
+        self.private_key.bytes_less_safe()
+    }
+    
     #[cfg(test)]
     pub fn bytes(&self) -> &[u8] {
         self.private_key.bytes_less_safe()
